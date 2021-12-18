@@ -21,4 +21,9 @@ jobs:
       run: dotnet restore
     - name: Publish
       run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
+    - name: Upload App Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+       name: AppVideoTrackerToonDieltjens
+       path: D:\a\CaseStudyToonDieltjens\CaseStudyToonDieltjens\CaseStudyToonDieltjens\bin\Release\netcoreapp3.1\win-x64\publish\
 
