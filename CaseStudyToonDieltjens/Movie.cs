@@ -7,6 +7,7 @@ namespace CaseStudyToonDieltjens
     class Movie : Video
     {
         public string Director { get; set; }
+        public string Genre { get; set; }
 
         public Movie(string name, string genre, string director)
         {
@@ -17,7 +18,7 @@ namespace CaseStudyToonDieltjens
 
         public override string ToString()
         {
-            return $"Movie: {base.ToString()} Director: {Director}";
+            return $"Movie: {base.ToString()} Genre: {Genre} --- Director: {Director}";
         }
     }
 }

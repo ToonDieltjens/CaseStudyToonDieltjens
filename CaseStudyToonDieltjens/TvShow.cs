@@ -15,13 +15,12 @@ namespace CaseStudyToonDieltjens
             Name = name;
         }
 
-        public TvShow(String airtime, List<string> playDays, string channel, string name, string genre)
+        public TvShow(String airtime, List<string> playDays, string channel, string name)
         {
             Airtime = airtime;
             PlayDays = playDays;
             Channel = channel;
             Name = name;
-            Genre = genre;
         }
 
         public override string ToString()

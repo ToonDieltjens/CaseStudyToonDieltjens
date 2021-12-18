@@ -40,12 +40,11 @@ namespace CaseStudyToonDieltjens
         private void button5_Click(object sender, EventArgs e)
         {
             var name = textBox1.Text;
-            var genre = textBox2.Text;
             var channel = textBox3.Text;
             var airtime = textBox4.Text;
             var playDays = checkedListBox1.CheckedItems.OfType<string>().ToList();
 
-            var tvShow = new TvShow(airtime, playDays, channel, name, genre);
+            var tvShow = new TvShow(airtime, playDays, channel, name);
 
             User.AddTvShow(tvShow);
         }

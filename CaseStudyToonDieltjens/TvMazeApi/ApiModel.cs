@@ -10,12 +10,6 @@ namespace CaseStudyToonDieltjens.TvMazeApi
         public object average { get; set; }
     }
 
-    public class Image
-    {
-        public string medium { get; set; }
-        public string original { get; set; }
-    }
-
     public class Schedule
     {
         public string time { get; set; }
@@ -38,9 +32,15 @@ namespace CaseStudyToonDieltjens.TvMazeApi
 
     public class Externals
     {
-        public int tvrage { get; set; }
-        public int thetvdb { get; set; }
-        public string imdb { get; set; }
+        public object tvrage { get; set; }
+        public object thetvdb { get; set; }
+        public object imdb { get; set; }
+    }
+
+    public class Image
+    {
+        public string medium { get; set; }
+        public string original { get; set; }
     }
 
     public class Self
@@ -72,7 +72,7 @@ namespace CaseStudyToonDieltjens.TvMazeApi
         public string name { get; set; }
         public string type { get; set; }
         public string language { get; set; }
-        public List<string> genres { get; set; }
+        public List<object> genres { get; set; }
         public string status { get; set; }
         public int runtime { get; set; }
         public int averageRuntime { get; set; }
@@ -87,7 +87,7 @@ namespace CaseStudyToonDieltjens.TvMazeApi
         public object dvdCountry { get; set; }
         public Externals externals { get; set; }
         public Image image { get; set; }
-        public string summary { get; set; }
+        public object summary { get; set; }
         public int updated { get; set; }
         public Links _links { get; set; }
     }
@@ -105,7 +105,7 @@ namespace CaseStudyToonDieltjens.TvMazeApi
         public DateTime airstamp { get; set; }
         public int runtime { get; set; }
         public Rating rating { get; set; }
-        public Image image { get; set; }
+        public object image { get; set; }
         public object summary { get; set; }
         public Show show { get; set; }
         public Links _links { get; set; }

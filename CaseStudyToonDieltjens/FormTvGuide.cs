@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaseStudyToonDieltjens.TvMazeApi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace CaseStudyToonDieltjens
         public FormTvGuide()
         {
             InitializeComponent();
+            InitializeListView();
+        }
+
+        private async Task InitializeListView()
+        {  
+            var tvMazeApiService = new TvMazeApiService();
+            var dateToday = DateTime.Now.ToString("yyyy-MM-dd");
+            var showsToday = await tvMazeApiService.RetrieveTvShows(dateToday);
+            foreach (var show in showsToday)
+            {
+                string[] stringShow = { show.Name, show.Channel, show.Airtime, String.Join(", ", show.PlayDays) };
+                var listviewItem = new ListViewItem(stringShow);
+                listView1.Items.Add(listviewItem);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
