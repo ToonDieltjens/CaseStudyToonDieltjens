@@ -55,13 +55,14 @@ namespace CaseStudyToonDieltjens
         {
             var selectedVideo = listBox1.SelectedItem as Video;
             User.RemoveVideo(selectedVideo);
-            
-            if(listBox1.Items.Count > 0)
+
+            if (listBox1.Items.Count > 0)
             {
-                listBox1.Items.Remove(listBox1.SelectedItem);
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex + 1);
+                var index = listBox1.Items.IndexOf(listBox1.SelectedItem);
+                listBox1.Items.RemoveAt(++index);
+                listBox1.Items.Remove(listBox1.SelectedItem); 
             }
-            
+
         }
     }
 }
