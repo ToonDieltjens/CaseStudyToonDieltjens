@@ -15,14 +15,17 @@ namespace CaseStudyToonDieltjens
 
         public static void AddMovie(Movie movie)
         {
-            //Movie Movie = new Movie(name, genre, director);
             VideoList.Add(movie);
         }
 
         public static void AddTvShow(TvShow tvShow)
         {
-            //TvShow TvShow = new TvShow(airtime, playdays, channel, name, genre);
             VideoList.Add(tvShow);
+        }
+
+        public static void RemoveVideo(Video video)
+        {
+            VideoList.Remove(video);
         }
     }
 }

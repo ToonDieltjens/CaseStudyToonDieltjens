@@ -35,6 +35,7 @@ namespace CaseStudyToonDieltjens
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -94,14 +95,29 @@ namespace CaseStudyToonDieltjens
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 27;
-            this.listBox1.Location = new System.Drawing.Point(262, 146);
+            this.listBox1.Location = new System.Drawing.Point(305, 146);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(20);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1566, 733);
+            this.listBox1.Size = new System.Drawing.Size(1478, 488);
             this.listBox1.TabIndex = 5;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkOrange;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Lucida Sans", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(934, 725);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(246, 90);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Delete";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // FormMyList
             // 
@@ -109,6 +125,7 @@ namespace CaseStudyToonDieltjens
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1832, 910);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
@@ -130,5 +147,6 @@ namespace CaseStudyToonDieltjens
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button5;
     }
 }

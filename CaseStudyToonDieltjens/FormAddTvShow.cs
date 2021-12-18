@@ -18,21 +18,21 @@ namespace CaseStudyToonDieltjens
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormTvGuide formTvGuide = new FormTvGuide();
+            var formTvGuide = new FormTvGuide();
             Hide();
             formTvGuide.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormAddMovie formAddMovie = new FormAddMovie();
+            var formAddMovie = new FormAddMovie();
             Hide();
             formAddMovie.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormMyList formMyList = new FormMyList();
+            var formMyList = new FormMyList();
             Hide();
             formMyList.Show();
         }
@@ -47,6 +47,18 @@ namespace CaseStudyToonDieltjens
             var tvShow = new TvShow(airtime, playDays, channel, name);
 
             User.AddTvShow(tvShow);
+
+            // Clear all the input fields
+            textBox1.Text = String.Empty;
+            textBox3.Text = String.Empty;
+            textBox4.Text = String.Empty;
+
+            // Uncheck all the checkbox items
+            foreach (int i in checkedListBox1.CheckedIndices)
+            {
+                checkedListBox1.SetItemCheckState(i, CheckState.Unchecked);
+            }
+
         }
     }
 }

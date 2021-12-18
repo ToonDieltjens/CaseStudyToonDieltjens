@@ -35,7 +35,7 @@ namespace CaseStudyToonDieltjens
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.Name = new System.Windows.Forms.ColumnHeader();
+            this.Showname = new System.Windows.Forms.ColumnHeader();
             this.Channel = new System.Windows.Forms.ColumnHeader();
             this.Airtime = new System.Windows.Forms.ColumnHeader();
             this.PlayDays = new System.Windows.Forms.ColumnHeader();
@@ -46,6 +46,7 @@ namespace CaseStudyToonDieltjens
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -106,24 +107,26 @@ namespace CaseStudyToonDieltjens
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name,
+            this.Showname,
             this.Channel,
             this.Airtime,
             this.PlayDays});
             this.listView1.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(259, 276);
+            this.listView1.Location = new System.Drawing.Point(259, 337);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(697, 431);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
-            // Name
+            // Showname
             // 
-            this.Name.Text = "Name";
-            this.Name.Width = 250;
+            this.Showname.Name = "FormTvGuide";
+            this.Showname.Text = "Name";
+            this.Showname.Width = 250;
             // 
             // Channel
             // 
@@ -151,12 +154,13 @@ namespace CaseStudyToonDieltjens
             this.listView2.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(962, 276);
+            this.listView2.Location = new System.Drawing.Point(962, 337);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(697, 431);
             this.listView2.TabIndex = 6;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.DoubleClick += new System.EventHandler(this.listView2_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -183,7 +187,7 @@ namespace CaseStudyToonDieltjens
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Sans", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(522, 209);
+            this.label2.Location = new System.Drawing.Point(522, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 42);
             this.label2.TabIndex = 7;
@@ -194,11 +198,23 @@ namespace CaseStudyToonDieltjens
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(1234, 209);
+            this.label3.Location = new System.Drawing.Point(1215, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 42);
             this.label3.TabIndex = 8;
             this.label3.Text = "Tomorrow";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(604, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(756, 39);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Double Click on the name to add it to your List!";
             // 
             // FormTvGuide
             // 
@@ -206,6 +222,7 @@ namespace CaseStudyToonDieltjens
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1691, 846);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listView2);
@@ -217,7 +234,7 @@ namespace CaseStudyToonDieltjens
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name.Name = "FormTvGuide";
+            this.Name = "FormTvGuide";
             this.Text = "TV Guide";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,7 +249,7 @@ namespace CaseStudyToonDieltjens
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Name;
+        private System.Windows.Forms.ColumnHeader Showname;
         private System.Windows.Forms.ColumnHeader Channel;
         private System.Windows.Forms.ColumnHeader Airtime;
         private System.Windows.Forms.ColumnHeader PlayDays;
@@ -243,6 +260,7 @@ namespace CaseStudyToonDieltjens
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -151,7 +151,7 @@ namespace CaseStudyToonDieltjens
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(1336, 158);
+            this.label6.Location = new System.Drawing.Point(1321, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(372, 74);
             this.label6.TabIndex = 13;
@@ -173,7 +173,7 @@ namespace CaseStudyToonDieltjens
             "Friday",
             "Saturday",
             "Sunday"});
-            this.checkedListBox1.Location = new System.Drawing.Point(1398, 275);
+            this.checkedListBox1.Location = new System.Drawing.Point(1384, 276);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(15);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(219, 277);
@@ -182,7 +182,7 @@ namespace CaseStudyToonDieltjens
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(943, 712);
+            this.button5.Location = new System.Drawing.Point(816, 713);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(486, 66);
             this.button5.TabIndex = 15;

@@ -17,21 +17,21 @@ namespace CaseStudyToonDieltjens
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormTvGuide formTvGuide = new FormTvGuide();
+            var formTvGuide = new FormTvGuide();
             Hide();
             formTvGuide.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormAddTvShow formAddTvShow = new FormAddTvShow();
+            var formAddTvShow = new FormAddTvShow();
             Hide();
             formAddTvShow.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormMyList formMyList = new FormMyList();
+            var formMyList = new FormMyList();
             Hide();
             formMyList.Show();
         }
@@ -45,6 +45,10 @@ namespace CaseStudyToonDieltjens
             var movie = new Movie(name, genre, director);
 
             User.AddMovie(movie);
+
+            textBox1.Text = String.Empty;
+            textBox2.Text = String.Empty;
+            textBox3.Text = String.Empty;
         }
     }
 }
