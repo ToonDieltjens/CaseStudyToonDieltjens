@@ -39,6 +39,13 @@ namespace CaseStudyToonDieltjens
             this.Channel = new System.Windows.Forms.ColumnHeader();
             this.Airtime = new System.Windows.Forms.ColumnHeader();
             this.PlayDays = new System.Windows.Forms.ColumnHeader();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -89,11 +96,11 @@ namespace CaseStudyToonDieltjens
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(634, 72);
+            this.label1.Location = new System.Drawing.Point(726, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(776, 42);
+            this.label1.Size = new System.Drawing.Size(534, 42);
             this.label1.TabIndex = 4;
-            this.label1.Text = "TV Guide with the best watched TV Shows";
+            this.label1.Text = "The most watched TV Shows";
             // 
             // listView1
             // 
@@ -106,9 +113,9 @@ namespace CaseStudyToonDieltjens
             this.listView1.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(289, 209);
+            this.listView1.Location = new System.Drawing.Point(259, 276);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(697, 581);
+            this.listView1.Size = new System.Drawing.Size(697, 431);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -133,12 +140,75 @@ namespace CaseStudyToonDieltjens
             this.PlayDays.Text = "Days on tv";
             this.PlayDays.Width = 250;
             // 
+            // listView2
+            // 
+            this.listView2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView2.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listView2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(962, 276);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(697, 431);
+            this.listView2.TabIndex = 6;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 250;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Channel";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Airtime";
+            this.columnHeader3.Width = 90;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Days on tv";
+            this.columnHeader4.Width = 250;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Sans", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(522, 209);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 42);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Today";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Sans", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(1234, 209);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 42);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Tomorrow";
+            // 
             // FormTvGuide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1691, 846);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
@@ -147,7 +217,7 @@ namespace CaseStudyToonDieltjens
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            //this.Name = "FormTvGuide";
+            this.Name.Name = "FormTvGuide";
             this.Text = "TV Guide";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,6 +236,13 @@ namespace CaseStudyToonDieltjens
         private System.Windows.Forms.ColumnHeader Channel;
         private System.Windows.Forms.ColumnHeader Airtime;
         private System.Windows.Forms.ColumnHeader PlayDays;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -16,19 +16,29 @@ namespace CaseStudyToonDieltjens
         public FormTvGuide()
         {
             InitializeComponent();
-            InitializeListView();
+            InitializeListView(listView1, true);
+            InitializeListView(listView2, false);
         }
 
-        private async Task InitializeListView()
+        private async Task InitializeListView(ListView listView, bool today)
         {  
             var tvMazeApiService = new TvMazeApiService();
-            var dateToday = DateTime.Now.ToString("yyyy-MM-dd");
-            var showsToday = await tvMazeApiService.RetrieveTvShows(dateToday);
+            var date = "";
+            if (today)
+            {
+                date = DateTime.Now.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                date = DateTime.Today.AddDays(1).ToString("yyyy-MM-dd");
+            }
+            
+            var showsToday = await tvMazeApiService.RetrieveTvShows(date);
             foreach (var show in showsToday)
             {
                 string[] stringShow = { show.Name, show.Channel, show.Airtime, String.Join(", ", show.PlayDays) };
                 var listviewItem = new ListViewItem(stringShow);
-                listView1.Items.Add(listviewItem);
+                listView.Items.Add(listviewItem);
             }
         }
 
@@ -50,5 +60,6 @@ namespace CaseStudyToonDieltjens
             Hide();
             formMyList.Show();
         }
+
     }
 }
