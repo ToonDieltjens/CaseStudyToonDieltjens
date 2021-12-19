@@ -10,7 +10,9 @@ namespace CaseStudyToonDieltjens.TvMazeApi
 {
     class TvMazeApiService
     {
-        // get the TvShows (based on parameter date) and return them in a List
+        // get the TvShows from api (based on parameter date)
+        // make an TvShow object of each TV show retrieved from the api
+        // return the TvShow objects in a list
         public async Task<IList<TvShow>> RetrieveTvShows(string date)
         {
             var client = new HttpClient() { BaseAddress = new Uri("http://api.tvmaze.com/") };
