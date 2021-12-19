@@ -14,6 +14,12 @@ namespace CaseStudyToonDieltjens
         public FormMyList()
         {
             InitializeComponent();
+            AddVideosToListBox();
+        }
+
+        // add all the videos that are in the VideoList to the listbox
+        private void AddVideosToListBox()
+        {
             foreach (Video video in User.VideoList)
             {
                 if (video is Movie)
@@ -28,6 +34,20 @@ namespace CaseStudyToonDieltjens
                     listBox1.Items.Add(tvShow);
                     listBox1.Items.Add("");
                 }
+            }
+        }
+
+        // delete button clicked --> selected video will be removed from the VideoList and from the listbox
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var selectedVideo = listBox1.SelectedItem as Video;
+            User.RemoveVideo(selectedVideo);
+
+            if (listBox1.Items.Count > 0)
+            {
+                var index = listBox1.Items.IndexOf(listBox1.SelectedItem);
+                listBox1.Items.RemoveAt(++index);
+                listBox1.Items.Remove(listBox1.SelectedItem);
             }
         }
 
@@ -49,20 +69,6 @@ namespace CaseStudyToonDieltjens
             var formAddMovie = new FormAddMovie();
             Hide();
             formAddMovie.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            var selectedVideo = listBox1.SelectedItem as Video;
-            User.RemoveVideo(selectedVideo);
-
-            if (listBox1.Items.Count > 0)
-            {
-                var index = listBox1.Items.IndexOf(listBox1.SelectedItem);
-                listBox1.Items.RemoveAt(++index);
-                listBox1.Items.Remove(listBox1.SelectedItem); 
-            }
-
         }
     }
 }

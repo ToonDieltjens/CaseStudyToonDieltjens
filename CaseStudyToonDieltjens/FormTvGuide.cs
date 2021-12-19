@@ -17,11 +17,13 @@ namespace CaseStudyToonDieltjens
         public FormTvGuide()
         {
             InitializeComponent();
-            InitializeListView(listView1, true);
-            InitializeListView(listView2, false);
+            _ = InitializeListView(listView1, true);
+            _ = InitializeListView(listView2, false);
         }
 
+        // new list to store all the TvShows (today and tomorrow)
         List<TvShow> allTvShows = new List<TvShow>();
+
         private async Task InitializeListView(ListView listView, bool today)
         {  
             var tvMazeApiService = new TvMazeApiService();
@@ -37,6 +39,7 @@ namespace CaseStudyToonDieltjens
             
             var shows = await tvMazeApiService.RetrieveTvShows(date);
             
+            // add all the shows to the listview
             foreach (var show in shows)
             {
                 string[] stringShow = { show.Name, show.Channel, show.Airtime, String.Join(", ", show.PlayDays) };
@@ -44,6 +47,38 @@ namespace CaseStudyToonDieltjens
                 listView.Items.Add(listviewItem);
 
                 allTvShows.Add(show);
+            }
+        }
+
+        // add the double clicked item of listview1 to the Videolist
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedItem = listView1.SelectedItems[0];
+
+            foreach (var show in allTvShows)
+            {
+                //Debug.WriteLine(selectedItem.Text);
+                //Debug.WriteLine(show.Name);
+                if (selectedItem.Text.Equals(show.Name))
+                {
+                    User.AddTvShow(show);
+                }
+            }
+        }
+
+        // add the double clicked item of listview2 to the VideoList
+        private void listView2_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedItem = listView2.SelectedItems[0];
+
+            foreach (var show in allTvShows)
+            {
+                //Debug.WriteLine(selectedItem.Text);
+                //Debug.WriteLine(show.Name);
+                if (selectedItem.Text.Equals(show.Name))
+                {
+                    User.AddTvShow(show);
+                }
             }
         }
 
@@ -64,36 +99,6 @@ namespace CaseStudyToonDieltjens
             var formMyList = new FormMyList();
             Hide();
             formMyList.Show();
-        }
-
-        private void listView1_DoubleClick(object sender, EventArgs e)
-        {
-            var selectedItem = listView1.SelectedItems[0];
-
-            foreach (var show in allTvShows)
-            {
-                Debug.WriteLine(selectedItem.Text);
-                Debug.WriteLine(show.Name);
-                if (selectedItem.Text.Equals(show.Name))
-                {
-                    User.AddTvShow(show);
-                }
-            }
-        }
-        
-        private void listView2_DoubleClick(object sender, EventArgs e)
-        {
-            var selectedItem = listView2.SelectedItems[0];
-            
-            foreach(var show in allTvShows)
-            {
-                Debug.WriteLine(selectedItem.Text);
-                Debug.WriteLine(show.Name);
-                if (selectedItem.Text.Equals(show.Name))
-                {
-                    User.AddTvShow(show);
-                }
-            }
         }
     }
 }

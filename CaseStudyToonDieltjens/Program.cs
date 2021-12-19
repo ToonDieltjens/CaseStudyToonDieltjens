@@ -14,19 +14,8 @@ namespace CaseStudyToonDieltjens
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async Task Main()
+        static void Main()
         {
-            //var tvMazeApiService = new TvMazeApiService();
-            //var date = DateTime.Now.ToString("yyyy-MM-dd");
-            //var shows = await tvMazeApiService.RetrieveTvShows("date");
-            //foreach (var show in shows)
-            //{
-            //    Debug.WriteLine(show.Name);
-            //    Debug.WriteLine(show.Channel);
-            //    Debug.WriteLine(String.Join(", ", show.PlayDays));
-            //    Debug.WriteLine(show.Airtime);
-            //}
-
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
