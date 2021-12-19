@@ -115,6 +115,7 @@ namespace CaseStudyToonDieltjens
             this.listView1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(259, 337);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(697, 431);
             this.listView1.TabIndex = 5;
@@ -155,6 +156,7 @@ namespace CaseStudyToonDieltjens
             this.listView2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(962, 337);
+            this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(697, 431);
             this.listView2.TabIndex = 6;

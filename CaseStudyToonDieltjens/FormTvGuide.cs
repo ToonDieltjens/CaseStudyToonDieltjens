@@ -1,12 +1,7 @@
-﻿using CaseStudyToonDieltjens.TvMazeApi;
+﻿using CaseStudyToonDieltjens.Interface;
+using CaseStudyToonDieltjens.TvMazeApi;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,8 +20,9 @@ namespace CaseStudyToonDieltjens
         List<TvShow> allTvShows = new List<TvShow>();
 
         private async Task InitializeListView(ListView listView, bool today)
-        {  
-            var tvMazeApiService = new TvMazeApiService();
+        {
+            ITvMazeApiService tvMazeApiService = new TvMazeApiService();
+
             string date;
             if (today)
             {
@@ -38,11 +34,11 @@ namespace CaseStudyToonDieltjens
             }
             
             var shows = await tvMazeApiService.RetrieveTvShows(date);
-            
+
             // add all the shows to the listview
             foreach (var show in shows)
             {
-                string[] stringShow = { show.Name, show.Channel, show.Airtime, String.Join(", ", show.PlayDays) };
+                string[] stringShow = { show.Name, show.Channel, show.Airtime, string.Join(", ", show.PlayDays) };
                 var listviewItem = new ListViewItem(stringShow);
                 listView.Items.Add(listviewItem);
 

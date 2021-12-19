@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CaseStudyToonDieltjens
 {
     static class User
     {
-        public static List<Video> VideoList { get; set; }
+        public static List<Video> VideoList { get; private set; }
 
         static User()
         {
